@@ -108,23 +108,9 @@
 /* Responsive mobile */
 @media (max-width: 768px) {
   .nav-menu {
-    display: flex;
-    flex-direction: column;
-    background-color: #040303;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    padding: 10px 0;
-    gap: 15px;
+    display: none; /* menu caché sur mobile */
   }
-
-  .nav-menu li a {
-    font-size: 18px;
-    color: #ffccf0;
-  }
-}
-
+  
   .lang-wrapper {
     justify-content: flex-end;
     margin-top: 5px;
