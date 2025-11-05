@@ -1,0 +1,83 @@
+.footer {
+  background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
+  color: #fff;
+  padding: 50px 20px 25px;
+  text-align: center;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.footer:hover {
+  transform: perspective(1000px) rotateX(2deg);
+}
+
+/* Conteneur */
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+/* Logo */
+.footer-logo {
+  text-align: center;
+}
+
+.footer-logo-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  filter: drop-shadow(0px 0px 6px rgba(0, 150, 255, 0.6));
+  margin-bottom: 10px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  perspective: 800px;
+}
+
+.footer-logo-img:hover {
+  transform: rotateY(20deg) rotateX(10deg) scale(1.1);
+  box-shadow: 0 0 15px rgba(0, 150, 255, 0.8);
+}
+
+.footer-logo h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.footer-logo p {
+  font-size: 0.9rem;
+  color: #ccc;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* Réseaux sociaux */
+.footer-social {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  font-size: 1.7rem;
+}
+
+.footer-social a {
+  color: #bbb;
+  transition: transform 0.5s ease, color 0.3s ease, filter 0.3s ease;
+  perspective: 800px;
+}
+
+.footer-social a:hover {
+  color: #00bfff;
+  transform: rotateY(360deg) rotateX(20deg) scale(1.2);
+  filter: drop-shadow(0px 0px 8px #00bfff);
+}
+
+/* Bas du footer */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 25px;
+  padding-top: 12px;
+  font-size: 0.85rem;
+  color: #888;
+}

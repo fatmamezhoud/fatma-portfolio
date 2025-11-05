@@ -1,0 +1,98 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  background: linear-gradient(270deg, #6497e9, #e9e7b5, #60a5fa, #ff689d);
+  background-size: 800% 800%;
+  padding: 50px 20px;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hero img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 25px;
+  box-shadow: 0 15px 35px rgb(225, 209, 234);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  transform: rotate(-2deg);
+}
+
+.hero img:hover {
+  transform: rotate(0deg) scale(1.08);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+.hero h1 {
+  font-size: 36px;
+  color: #111827;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.hero h1 span {
+  color: #0766ff;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 35px;
+  max-width: 500px;
+}
+
+/* Boutons 3D */
+.hero-action {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-connect, .hero-resume {
+  padding: 12px 30px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 16px;
+  perspective: 1000px; /* perspective pour effet 3D */
+}
+
+/* Bouton Me contacter */
+.hero-connect {
+  background: linear-gradient(145deg, #ff689d, #2563eb);
+  color: white;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.967);
+}
+
+.hero-connect:hover {
+  transform: rotateX(15deg) rotateY(10deg) scale(1.05);
+  box-shadow: 0 15px 35px rgba(59,130,246,0.6);
+}
+
+/* Bouton Mon CV */
+.hero-resume {
+  background: white;
+  color: #3b82f6;
+  border: 2px solid #ff689d;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.967);
+}
+
+.hero-resume:hover {
+  transform: rotateX(15deg) rotateY(10deg) scale(1.05);
+  box-shadow: 0 15px 35px rgba(59,130,246,0.6);
+  background: #3b82f6;
+  color: white;
+}
