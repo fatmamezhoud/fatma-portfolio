@@ -18,8 +18,8 @@
 }
 
 .hero img {
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 250px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 25px;
