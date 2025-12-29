@@ -28,7 +28,7 @@ const Hero = () => {
     description:
       "Ich entwickle moderne, leistungsstarke und elegante Web- und Mobile-Anwendungen. Mein Ziel: Ihre Ideen in intuitive und attraktive digitale Lösungen umzusetzen.",
     contactBtn: "Kontakt",
-    resumeBtn: "Lebenslauf",
+    resumeBtn: "Lebenslauf", 
   },
   };
 
@@ -57,7 +57,7 @@ const Hero = () => {
   target="_blank"
   rel="noopener noreferrer"
 >
-  <button className="hero-resume">{language === "FR" ? "Mon CV" : "My Resume"}</button>
+  <button className="hero-resume">{resumeBtn}</button>
 </a>
 
       </div>
