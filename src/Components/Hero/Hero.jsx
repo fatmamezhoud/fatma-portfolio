@@ -21,7 +21,15 @@ const Hero = () => {
       description: "I design and build modern, efficient, and elegant websites and applications. My goal: turning your ideas into intuitive and engaging digital experiences.",
       contactBtn: "Contact Me",
       resumeBtn: "My Resume"
-    }
+    },
+     DE: {
+    greeting: "Hallo, ich bin Fatma Mezhoud,",
+    profession: "Software-Ingenieurin",
+    description:
+      "Ich entwickle moderne, leistungsstarke und elegante Web- und Mobile-Anwendungen. Mein Ziel: Ihre Ideen in intuitive und attraktive digitale Lösungen umzusetzen.",
+    contactBtn: "Kontakt",
+    resumeBtn: "Lebenslauf",
+  },
   };
 
   const { greeting, profession, description, contactBtn, resumeBtn } = heroText[language];
@@ -37,8 +45,15 @@ const Hero = () => {
           <button className='hero-connect'>{contactBtn}</button>
         </a>
 
-        <a
-  href={language === "FR" ? "/CV-pho.pdf" : "/CV-fatma mezhoud.pdf"}
+        
+  <a
+  href={
+    language === "FR"
+      ? "CV-fatmamezhoud-.pdf"
+      : language === "DE"
+      ? "/CV-Softwareentwicklerin.pdf"
+      : "/CV-fatma mezhoud.pdf"
+  }
   target="_blank"
   rel="noopener noreferrer"
 >

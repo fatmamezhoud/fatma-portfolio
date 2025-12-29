@@ -7,7 +7,7 @@ const Contact = () => {
   const form = useRef();
   const { language } = useLanguage();
 
-  // Texte dynamique FR/EN
+  // Texte dynamique FR / EN / DE
   const contactText = {
     FR: {
       header: "Me contacter",
@@ -16,11 +16,13 @@ const Contact = () => {
       emailPlaceholder: "Email",
       messagePlaceholder: "Votre message",
       sendBtn: "Envoyer",
+      success: "Message envoyé avec succès !",
+      error: "Erreur lors de l'envoi, veuillez réessayer.",
       info: {
         email: "Email",
         phone: "Téléphone",
-        location: "Localisation"
-      }
+        location: "Localisation",
+      },
     },
     EN: {
       header: "Contact Me",
@@ -29,32 +31,62 @@ const Contact = () => {
       emailPlaceholder: "Email",
       messagePlaceholder: "Your message",
       sendBtn: "Send",
+      success: "Message sent successfully!",
+      error: "Error sending message, please try again.",
       info: {
         email: "Email",
         phone: "Phone",
-        location: "Location"
-      }
-    }
+        location: "Location",
+      },
+    },
+    DE: {
+      header: "Kontaktieren Sie mich",
+      subtitle: "Sie können mich für Fragen oder Projekte kontaktieren.",
+      namePlaceholder: "Vollständiger Name",
+      emailPlaceholder: "E-Mail",
+      messagePlaceholder: "Ihre Nachricht",
+      sendBtn: "Senden",
+      success: "Nachricht erfolgreich gesendet!",
+      error: "Fehler beim Senden der Nachricht. Bitte erneut versuchen.",
+      info: {
+        email: "E-Mail",
+        phone: "Telefon",
+        location: "Standort",
+      },
+    },
   };
 
-  const { header, subtitle, namePlaceholder, emailPlaceholder, messagePlaceholder, sendBtn, info } = contactText[language];
+  // ✅ Fallback sécurité
+  const data = contactText[language] || contactText.EN;
+
+  const {
+    header,
+    subtitle,
+    namePlaceholder,
+    emailPlaceholder,
+    messagePlaceholder,
+    sendBtn,
+    success,
+    error,
+    info,
+  } = data;
 
   const sendEmail = (e) => {
     e.preventDefault();
 
     sendForm(
-      "service_l5g7cb9",       // ton Service ID EmailJS
-      "template_f16z16a",      // ton Template ID EmailJS
+      "service_l5g7cb9",
+      "template_f16z16a",
       form.current,
-      "3oAzwp3AvOfFtBOgN"      // ta clé publique EmailJS
+      "3oAzwp3AvOfFtBOgN"
     )
-      .then((result) => {
-        alert(language === "FR" ? "Message envoyé avec succès !" : "Message sent successfully!");
+      .then(() => {
+        alert(success);
         form.current.reset();
       })
-      .catch((error) => {
-        alert(language === "FR" ? "Erreur lors de l'envoi, veuillez réessayer." : "Error sending message, please try again.");
-        console.log(error.text);
+      .catch((err) => {
+        alert(error);
+        console.error(err);
       });
   };
 
@@ -94,7 +126,7 @@ const Contact = () => {
           <button type="submit">{sendBtn}</button>
         </form>
 
-        {/* Informations de contact */}
+        {/* Informations */}
         <div className="contact-info">
           <div className="info-item">
             <h4>{info.email}</h4>

@@ -13,7 +13,7 @@ function MyWork() {
   const { language } = useLanguage();
   const [selectedProject, setSelectedProject] = useState(null);
 
-  // Texte dynamique FR/EN et projets
+  // Texte dynamique FR / EN / DE
   const projectsData = {
     FR: {
       title: "Mes Projets",
@@ -58,7 +58,7 @@ function MyWork() {
           description:
             "Site complet de vente en ligne avec panier, paiement sécurisé et interface moderne.",
         },
-      ]
+      ],
     },
     EN: {
       title: "My Projects",
@@ -103,11 +103,57 @@ function MyWork() {
           description:
             "Complete online store with cart, secure payment, and modern interface.",
         },
-      ]
-    }
+      ],
+    },
+    DE: {
+      title: "Meine Projekte",
+      projects: [
+        {
+          id: 1,
+          title: "E-Learning Anwendung",
+          tech: "React Native • NestJS • TypeScript",
+          image: elearningImg,
+          description:
+            "Interaktive mobile Lernanwendung mit Quiz, Tests und biometrischer Authentifizierung. Kursverwaltung, Benachrichtigungen und sichere Zahlungen.",
+        },
+        {
+          id: 2,
+          title: "Praktikanten-Verwaltungs-App",
+          tech: "Angular • Spring Boot",
+          image: stageImg,
+          description:
+            "Interne Anwendung zur Verwaltung und Nachverfolgung von Praktikanten. HR-Benachrichtigungen und Automatisierung der Verträge.",
+        },
+        {
+          id: 3,
+          title: "Foodie Privates Netzwerk",
+          tech: "React • Node.js • MongoDB",
+          image: foodieImg,
+          description:
+            "Kulinarisches soziales Netzwerk zum Teilen von Rezepten und Interaktion. Optimiertes Backend für hohe Leistung.",
+        },
+        {
+          id: 4,
+          title: "Reisebüro-Anwendung",
+          tech: "React • Node.js",
+          image: travelImg,
+          description:
+            "Webplattform für Online-Reisebuchungen. Verwaltung von Angeboten und Echtzeit-Reservierungen.",
+        },
+        {
+          id: 5,
+          title: "E-Commerce Webseite",
+          tech: "React • Node.js",
+          image: ecommerceImg,
+          description:
+            "Kompletter Online-Shop mit Warenkorb, sicherer Bezahlung und moderner Benutzeroberfläche.",
+        },
+      ],
+    },
   };
 
-  const { title, projects } = projectsData[language];
+  const data = projectsData[language] || projectsData.EN;
+  const { title, projects } = data;
 
   return (
     <section className="work-page" id="mywork">
@@ -141,7 +187,7 @@ function MyWork() {
               className="close-btn"
               onClick={() => setSelectedProject(null)}
             >
-              {language === "FR" ? "Fermer" : "Close"}
+              {language === "FR" ? "Fermer" : language === "DE" ? "Schließen" : "Close"}
             </button>
           </div>
         </div>

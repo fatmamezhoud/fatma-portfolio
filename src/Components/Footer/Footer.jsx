@@ -16,7 +16,7 @@ const Footer = () => {
       .catch((err) => console.error("Erreur compteur :", err));
   }, []);
 
-  // Texte dynamique FR/EN
+  // Texte dynamique FR / EN / DE
   const footerText = {
     FR: {
       role: "Développeuse Full Stack | Passionnée par la technologie",
@@ -27,6 +27,11 @@ const Footer = () => {
       role: "Full Stack Developer | Passionate about technology",
       copyright: "© 2025 Fatma Mezhoud. All rights reserved.",
       visitors: "👀 Visitors count:",
+    },
+    DE: {
+      role: "Full-Stack-Entwicklerin | Begeistert von Technologie",
+      copyright: "© 2025 Fatma Mezhoud. Alle Rechte vorbehalten.",
+      visitors: "👀 Besucheranzahl:",
     },
   };
 

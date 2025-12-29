@@ -22,7 +22,14 @@ const Navbar = () => {
       { label: 'Services', id: 'services' },
       { label: 'My Work', id: 'mywork' },
       { label: 'Contact', id: 'contact' }
-    ]
+    ],
+    DE: [
+    { label: 'Startseite', id: 'hero' },
+    { label: 'Über mich', id: 'about' },
+    { label: 'Dienstleistungen', id: 'services' },
+    { label: 'Projekte', id: 'mywork' },
+    { label: 'Kontakt', id: 'contact' }
+  ]
   };
 
   const toggleMenu = () => setIsOpen(!isOpen);
